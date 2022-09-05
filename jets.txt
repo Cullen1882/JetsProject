@@ -1,2 +1,10 @@
-Cargo, Boeing, 350, 3000, 1500000
-Fighter, F19, 400, 2500, 3000000
+Cargo, Boeing747, 420, 4000, 1500000
+Fighter, F19, 1700, 3000, 3000000
+Passenger, Concord, 500, 8000, 2100000
+Passenger, JetBlue, 525, 8100, 3000000
+Fighter, Raptor, 1650, 2900, 4500000
+Cargo, AutoBus727, 400, 4200, 2500000
+Cargo, AirBus737, 430, 5100, 3500000
+Fighter, F29, 1650, 3200, 5000000
+Passenger, AirStream, 600, 7800, 6000000
+Fighter, F22, 1800, 3300, 5600000
