@@ -3,8 +3,14 @@ package com.skilldistillery.jets.app;
 import java.util.Scanner;
 
 import com.skilldistillery.jets.entities.AirField;
+import com.skilldistillery.jets.entities.CargoPlane;
+import com.skilldistillery.jets.entities.Fighter;
+import com.skilldistillery.jets.entities.Jet;
+import com.skilldistillery.jets.entities.JetPass;
 
 public class JetsApplication {
+	AirField af = new AirField();
+	
 	Scanner scan = new Scanner(System.in);
 
 	public static void main(String[] args) {
@@ -50,24 +56,89 @@ public class JetsApplication {
 			int userMenuChoice = scan.nextInt();
 			
 			switch (userMenuChoice) {
-			case '1':
-				System.out.println(AirField.getAirfield());;
+			case 1:
+				for (Jet jet : af.getAirfield()) {
+					System.out.println(jet.getModel());
+				}
 				break;
-			case '2':
+			case 2:
+				for (Jet jet : af.getAirfield()) {
+				jet.fly();
+				}
 				break;
-			case '3': 
+			case 3:
+				Jet fastest = af.getAirfield().get(0);
+				for (Jet jet : af.getAirfield()) {
+					if (fastest.getSpeed() < jet.getSpeed()) {
+						fastest = jet;
+					}
+					
+				}
+				System.out.println("The fastest jet in the fleet is: " + fastest);
 				break;
-			case '4':
+			case 4:
+				Jet longest = af.getAirfield().get(0);
+				for (Jet jet : af.getAirfield()) {
+					if (longest.getRange() < jet.getRange()) {
+						longest = jet;
+					}
+					
+				}
+				System.out.println("The jet with the longest range is: " + longest);
 				break;
-			case '5':
+			case 5:
+				for (Jet jet : af.getAirfield()) {
+					if (jet instanceof CargoPlane) {
+						((CargoPlane)jet).loadCargo();
+					}	
+					}
 				break;
-			case '6':
+			case 6:
+				for (Jet jet : af.getAirfield()) {
+					if (jet instanceof Fighter) {
+						((Fighter)jet).Fight();
+					}
+				}
 				break;
-			case '7':
+			case 7:
+//				mod, sp, rng, price
+				System.out.println("To add a new jet please enter jet type (Cargo, Fighter or Passenger); ");
+				String type = scan.next();
+				System.out.println("Please enter Model, Speed, Range and Price. Press Enter after each field");
+				String model = scan.next();
+				Double speed = scan.nextDouble();
+				int range = scan.nextInt();
+				long price = scan.nextLong();
+//				Jet newJet = null;
+				if (type.equalsIgnoreCase("Cargo")) {
+			    	af.addJet(new CargoPlane(type, model, speed, range, price));
+			    }
+			    else if(type.equalsIgnoreCase("Fighter")) {
+			    	af.addJet(new Fighter(type, model, speed, range, price));
+			  
+			    }
+			    else {
+			    	af.addJet(new JetPass(type, model, speed, range, price));
+			    }
+				
+						
 				break;
-			case '8':
+			case 8:
+				int remCount = 1;
+				for (Jet jet : af.getAirfield()) {
+					System.out.println(remCount + ". " + jet.getType() + " " + jet.getModel());
+					remCount++;	
+				}
+				System.out.println("Please choose the number of the jet you would like to remove: ");
+				int userRemNum = scan.nextInt();
+				af.removeJet(userRemNum - 1);
+				System.out.println("The jet you chose has been removed.");
+				
 				break;
-			case '9':
+			case 9:
+				System.out.println("Thank you for using The Jets Program.");
+					keepGoing = false;
+				
 				break;
 			default:
 				break;
@@ -76,3 +147,4 @@ public class JetsApplication {
 		
 	}
 }
+

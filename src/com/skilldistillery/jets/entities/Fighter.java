@@ -2,26 +2,32 @@ package com.skilldistillery.jets.entities;
 
 public class Fighter extends Jet implements CombatReady {
 
-	@Override
-	public double fly() {
-		return 0;
-	}
+	
 	public Fighter() {
 		super();
 	}
-	public Fighter(String model, double speed, int range, long price ) {
-		
+	
+	public Fighter(String type, String model, double speed, int range, long price) {
+		super(type, model, speed, range, price);
 	}
+//	public void fly() {
+//		
+//	}
+//	@Override
+//	public double fly() {
+//		double hOf = (float)(getRange() / getSpeed());
+//		return hOf;
+//	}
 	@Override
 	public String toString() {
 		return "Fighter [getModel()=" + getModel() + ", getSpeed()=" + getSpeed() + ", getRange()=" + getRange()
-				+ ", getPrice()=" + getPrice() + ", getClass()=" + getClass() + ", toString()=" + super.toString()
-				+ "]";
+				+ ", getPrice()=" + getPrice() + ", getType()=" + getType() + ", toString()=" + super.toString() + "]";
 	}
+	
 	@Override
 	public void Fight() {
 		System.out.println("Promoting Democracy....pew pew pew");
 	}
 	
+	}
 
-}
