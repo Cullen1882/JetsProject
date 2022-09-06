@@ -26,7 +26,7 @@ public class Fighter extends Jet implements CombatReady {
 	
 	@Override
 	public void Fight() {
-		System.out.println("Promoting Democracy....pew pew pew");
+		System.out.println(this.getModel() + "Promoting Democracy....pew pew pew");
 	}
 	
 	}
