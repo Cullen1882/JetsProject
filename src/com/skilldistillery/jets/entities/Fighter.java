@@ -18,11 +18,11 @@ public class Fighter extends Jet implements CombatReady {
 //		double hOf = (float)(getRange() / getSpeed());
 //		return hOf;
 //	}
-	@Override
-	public String toString() {
-		return "Fighter [getModel()=" + getModel() + ", getSpeed()=" + getSpeed() + ", getRange()=" + getRange()
-				+ ", getPrice()=" + getPrice() + ", getType()=" + getType() + ", toString()=" + super.toString() + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "Fighter [getModel()=" + getModel() + ", getSpeed()=" + getSpeed() + ", getRange()=" + getRange()
+//				+ ", getPrice()=" + getPrice() + ", getType()=" + getType() + ", toString()=" + super.toString() + "]";
+//	}
 	
 	@Override
 	public void Fight() {

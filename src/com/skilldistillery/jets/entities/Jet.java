@@ -1,5 +1,8 @@
 package com.skilldistillery.jets.entities;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 public abstract class Jet {
 	private String type;
 	private String model;
@@ -8,8 +11,19 @@ public abstract class Jet {
 	private long price;
 
 public void fly() {
+	Double longdouble = new Double(range / speed);
+
+	Double hrTrun = BigDecimal.valueOf(longdouble)
+	    .setScale(2, RoundingMode.HALF_UP)
+	    .doubleValue();
+	Double machDoub = new Double(speed * 0.001303);
+
+	Double machTrun = BigDecimal.valueOf(machDoub)
+	    .setScale(2, RoundingMode.HALF_UP)
+	    .doubleValue();
 	
-	System.out.println("Jet [type=" + type + ", model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price + " hours of flight " +  (range / speed) + " Mach " + ( speed * 0.001303));
+	
+	System.out.println("Jet [type = " + type + ", model = " + model + ", speed = " + speed + ", range = " + range + ", price = $" + price + " hours of flight = " + hrTrun + ", " + " Mach = " + machTrun);
 }
 
 public Jet() {

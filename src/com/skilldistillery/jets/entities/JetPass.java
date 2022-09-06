@@ -19,11 +19,11 @@ public class JetPass extends Jet {
 		super(type, model, speed, range, price);
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public String toString() {
-		return "JetPass [getModel()=" + getModel() + ", getSpeed()=" + getSpeed() + ", getRange()=" + getRange()
-				+ ", getPrice()=" + getPrice() + ", getType()=" + getType() + ", toString()=" + super.toString() + "]";
-	}
+//	@Override
+//	public String toString() {
+//		return "JetPass [getModel()=" + getModel() + ", getSpeed()=" + getSpeed() + ", getRange()=" + getRange()
+//				+ ", getPrice()=" + getPrice() + ", getType()=" + getType() + ", toString()=" + super.toString() + "]";
+//	}
 	 
 
 }
