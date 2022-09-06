@@ -91,8 +91,7 @@ public void displayJet() {
 
 @Override
 public String toString() {
-	return "Jet [type=" + type + ", model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price
-			+ ", toString()=" + super.toString() + "]";
+	return "Jet [type=" + type + ", model=" + model + ", speed=" + speed + ", range=" + range + ", price=" + price;
 }
 
 
